@@ -29,12 +29,10 @@ def executer(
             continue
 
         effectues.append(deplacement)
-        print(
-            f"{deplacement.source.name}"
-            f" -> {deplacement.destination.parent.name}/"
-        )
+        print(f"{deplacement.source.name} -> {deplacement.destination.parent.name}/")
 
     return effectues
+
 
 def annuler(deplacements: list[Deplacement], dry_run: bool = False) -> None:
     """Remet les fichiers à leur place d'origine, dans l'ordre inverse."""

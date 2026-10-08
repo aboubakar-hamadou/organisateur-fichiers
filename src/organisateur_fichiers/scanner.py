@@ -4,9 +4,7 @@ from organisateur_fichiers.categories import trouver_categorie
 from organisateur_fichiers.modeles import Deplacement
 
 
-def planifier(
-    dossier: Path, exclure: set[str] | None = None
-) -> list[Deplacement]:
+def planifier(dossier: Path, exclure: set[str] | None = None) -> list[Deplacement]:
     """Prépare la liste des déplacements, sans toucher aux fichiers."""
     if not dossier.is_dir():
         raise NotADirectoryError(f"Dossier introuvable : {dossier}")

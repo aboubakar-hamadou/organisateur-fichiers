@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 from organisateur_fichiers.modeles import Deplacement
@@ -12,7 +12,7 @@ def sauvegarder(dossier: Path, deplacements: list[Deplacement]) -> None:
     if not deplacements:
         return
     donnees = {
-        "date": datetime.now().isoformat(timespec="seconds"),
+        "date": datetime.now(UTC).isoformat(timespec="seconds"),
         "deplacements": [
             {"source": str(d.source), "destination": str(d.destination)}
             for d in deplacements

@@ -11,9 +11,7 @@ def creer_parseur() -> argparse.ArgumentParser:
         description="Range les fichiers d'un dossier par catégorie"
     )
     parseur.add_argument("dossier", type=Path, help="Dossier à ranger")
-    parseur.add_argument(
-        "--dry-run", action="store_true", help="Simule sans déplacer"
-    )
+    parseur.add_argument("--dry-run", action="store_true", help="Simule sans déplacer")
     parseur.add_argument(
         "--undo", action="store_true", help="Annule le dernier rangement"
     )
@@ -41,9 +39,7 @@ def main() -> None:
                 e.lower() if e.startswith(".") else f".{e.lower()}"
                 for e in args.exclure
             }
-            effectues = executer(
-                planifier(dossier, exclusions), dry_run=args.dry_run
-            )
+            effectues = executer(planifier(dossier, exclusions), dry_run=args.dry_run)
             if not args.dry_run:
                 journal.sauvegarder(dossier, effectues)
     except (NotADirectoryError, FileNotFoundError) as erreur:
