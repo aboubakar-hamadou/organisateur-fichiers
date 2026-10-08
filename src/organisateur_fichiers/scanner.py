@@ -11,7 +11,7 @@ def planifier(dossier: Path) -> list[Deplacement]:
 
     deplacements: list[Deplacement] = []
     for fichier in dossier.iterdir():
-        if not fichier.is_file():
+        if not fichier.is_file() or fichier.name.startswith("."):
             continue
         categorie = trouver_categorie(fichier.suffix)
         destination = dossier / categorie / fichier.name

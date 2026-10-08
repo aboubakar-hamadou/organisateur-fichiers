@@ -1,7 +1,7 @@
 [project]
 name = "organisateur-fichiers"
 version = "0.1.0"
-description = "Add your description here"
+description = "Outil en ligne de commande qui range les fichiers d'un dossier par catégorie"
 readme = "README.md"
 authors = [
     { name = "aboubakar", email = "hamadouaboubakar2020@gmail.com" }
@@ -10,7 +10,7 @@ requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-organisateur-fichiers = "organisateur_fichiers:main"
+organiser = "organisateur_fichiers.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
